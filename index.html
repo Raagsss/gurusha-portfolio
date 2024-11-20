@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio - Gurusha Walia</title>
+
+    <!-- bootstrap css cdn link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!-- google font link
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <!-- bootstrap icon cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <!-- for adding animation to website we have use AOS library 
+    AOS Library css file cdn link -->
+   
+
+    <!-- jquery cdn link  -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+  </head>
+  <style>
+        /* appling google font over the website  */
+    body{
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    /* styling menu icon */
+    .nav-menu{
+        border: none;
+        background-color: white;
+        font-size: 1.5rem;
+    }
+    /* styling navbar links  */
+    .navbar-nav a{
+        color: #EA2E25;
+        position: relative;
+    }
+    .navbar-nav a:hover{
+        color: #EA2E25;
+    }
+    .navbar-nav a:after {    
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display:block;
+        height: 2px;
+        left: 50%;
+        top: 35px;
+        position: absolute;
+        background: #EA2E25;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+    .navbar-nav a:hover:after { 
+        width: 100%; 
+        left: 0; 
+      }
+
+    .c-btn{
+        border: none;
+        height: 40px;
+        width: 160px;
+        margin-top: 20px;
+        background: #44ccd1c6;
+        color: #fff;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    /* styling home section starts */
+    .home{
+        width: 100%;
+        padding: 30px 0px 10px 0px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+    }
+      
+    .home h2{
+        font-size: 3rem;
+        line-height: 4rem;
+        margin-top: 80px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .c-orange{
+        color: white;
+        font-weight: 700;
+        font-size: 4rem;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .home p{
+        width: fit-content;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .h-btn:hover{
+        background: #EA2E25;
+        color: #fff;
+        transform: translateY(-20px);
+        transition-duration: 1s;
+    }
+
+    .link{
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: #EA2E25;
+        position: relative;
+    }
+    .link::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        top: 20px;
+        background-color: #EA2E25;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+    .link:hover{
+        color: #EA2E25;
+    }
+    .link:hover::after{
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    /* adding animation to home section image  */
+    .home img{
+        height: 110%;
+        width: 110%;
+        margin-top: 2px;
+    }
+
+    /* expertise section starts */
+    .heading small{
+        color: #EA2E25;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .heading h3{
+        margin-top: 0.5rem;
+        color: #EA2E25;
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    .expertise h4{
+        color: #EA2E25;
+        font-weight: 700;
+    }
+    .expertise a{
+        text-decoration: none;
+        color: #fca61f;
+    }
+    .expertise a:hover{
+        color: #6f34fe;
+    }
+    .expertise .service-card{
+        text-align: center;
+        padding: 15px 15px;
+        border-radius: 0.7rem;
+    }
+
+    .container1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        max-width: 1500px;
+        flex-wrap: wrap;
+        z-index: 1;
+        margin-left: -5px;
+        margin-top: 40px;
+    }
+
+    .container1 .card1 {
+        position: relative;
+        width: 280px;
+        height: 300px;
+        margin: 30px;
+        box-shadow: 20px 20px 20px rgba(90, 90, 90, 0.37);
+        border-radius: 15px;
+        background: rgba(25, 25, 25, 0.342);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 3px solid rgb(101, 63, 63);
+        border-bottom: 3px solid rgb(101, 63, 63);
+        border-left: 3px solid rgb(101, 63, 63);
+        border-right: 3px solid rgb(101, 63, 63);
+        backdrop-filter: blur(5px);
+    }
+
+    .container1 .card3 {
+        position: relative;
+        width: 280px;
+        height: 300px;
+        margin: 30px;
+        box-shadow: 20px 20px 20px rgba(90, 90, 90, 0.37);
+        border-radius: 15px;
+        background: rgba(25, 25, 25, 0.342);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 3px solid rgb(101, 63, 63);
+        border-bottom: 3px solid rgb(101, 63, 63);
+        border-left: 3px solid rgb(101, 63, 63);
+        border-right: 3px solid rgb(101, 63, 63);
+        backdrop-filter: blur(5px);
+    }
+
+    .container1 .card2 {
+        position: relative;
+        width: 280px;
+        height: 300px;
+        margin: 30px;
+        box-shadow: 20px 20px 20px rgba(90, 90, 90, 0.37);
+        border-radius: 15px;
+        background: rgba(25, 25, 25, 0.342);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 3px solid rgb(101, 63, 63);
+        border-bottom: 3px solid rgb(101, 63, 63);
+        border-left: 3px solid rgb(101, 63, 63);
+        border-right: 3px solid rgb(101, 63, 63);
+        backdrop-filter: blur(5px);
+    }
+
+    .container1 .card1 .content1 {
+        padding: 15px;
+        text-align: center;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: 0.5s;
+        color: white;
+    }
+
+    .container1 .card2 .content1 {
+        padding: 15px;
+        text-align: center;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: 0.5s;
+        color: white;
+    }
+
+    .container1 .card3 .content1 {
+        padding: 15px;
+        text-align: center;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: 0.5s;
+        color: white;
+    }
+
+    .container1 .card1:hover .content1 {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    .container1 .card2:hover .content1 {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    .container1 .card3:hover .content1 {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    .container1 .card1 .content1 h3 {
+        font-size: 1.8em;
+        color: white;
+        z-index: 1;
+    }
+
+    .container1 .card1 .content1 p {
+        font-size: 1.2em;
+        color: white;
+        font-weight: 300;
+
+    }
+
+    .container1 .card3 .content1 h3 {
+        font-size: 1.8em;
+        color: white;
+        z-index: 1;
+    }
+
+    .container1 .card3 .content1 p {
+        font-size: 1.2em;
+        color: white;
+        font-weight: 300;
+
+    }
+
+    .container1 .card2 .content1 h3 {
+        font-size: 1.8em;
+        color: white;
+        z-index: 1;
+    }
+
+    .container1 .card2 .content1 p {
+        font-size: 1.2em;
+        color: white;
+        font-weight: 300;
+
+    }
+
+    .img1{
+        width: 150px;
+        height: 120px;
+    }
+
+    /* skill section starts */
+    .skill{
+        background-color: rgb(0, 0, 0);
+    }
+    .progress-card{
+        padding: 12% 10% 10% 15%;
+        background-color: #fff;
+        text-align: center;
+        border-radius: 10%;
+    }
+    .progress-card:hover{
+        transform: scale(1.1,1.1);
+        transition-duration: 0.6s;
+    }
+    .circular-progress{
+        position: relative;
+        height: 130px;
+        width: 130px;
+        margin-left: 17px;
+        border-radius: 50%;
+        background: conic-gradient(#7d2ae8 3.6deg, #ededed 0deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .circular-progress::before{
+        content: "";
+        position: absolute;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        background-color: #fff;
+    }
+    .progress-value{
+        position: relative;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .html-progress{
+        color: #fca61f;
+    }
+    .javascript-progress{
+        color: #6f34fe;
+    }
+    .php-progress{
+        color: #20c997;
+    }
+    .reactjs-progress{
+        color: #3f396d;
+    }
+    .text{
+        font-size: 1.1rem;
+        font-weight: 500;
+        align-items: center;
+        margin-left: -20px;
+        color: black;
+    }
+    .heading p{
+        font-size: 1.3rem;
+    }
+
+    /* portfolio section starts */
+    #myBtnContainer{
+        margin-bottom: 45px;
+    }
+    #myBtnContainer button{
+      border: none;
+      color: black;
+      background: transparent;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;   
+      display: inline-block;
+      margin: 0 25px;
+    }
+    #myBtnContainer button:hover{
+        color: #EA2E25;
+    }
+
+    #myBtnContainer button:focus{
+        outline: none;
+    }
+    .post .content h4{
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .post .card{
+        border: none;
+    }
+
+    /* testimonial section starts */
+    .testimonial img:hover{
+        transform: scale(1.2,1.2);
+        transition-duration: 1s;
+    }
+    .testimonial h4{
+        color: #3f396d;
+    }
+    .testimonial i{
+        font-size: 2.9rem;
+        color: #fca61f;
+        
+    }
+
+    .projects {
+        padding: 20px;
+      }
+      
+      /* Filter List Styling */
+      .filter-list {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      
+      .filter-item {
+        margin-right: 15px;
+      }
+      
+      .filter-item button {
+        padding: 5px 9px;
+        background-color: rgba(231, 191, 182, 0.6);
+        color: rgb(36, 36, 36);
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      
+      .filter-item button.active {
+        background-color: #07B8BE;
+        color: rgb(36, 36, 36);
+      }
+      
+      /* Filter Select Box */
+      .filter-select-box {
+        position: relative;
+        margin-bottom: 25px;
+      }
+      
+      .filter-select {
+        color: rgb(36, 36, 36);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 10px;
+        border: none;
+        border-radius: 14px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      
+      /* Select List */
+      .select-list {
+        display: none; /* Initially hidden */
+        position: absolute;
+        top: calc(100% + 6px);
+        width: 100%;
+        border-radius: 8px;
+        z-index: 2;
+      }
+      
+      .filter-select.active + .select-list {
+        display: block; /* Show when active */
+      }
+
+      .h2 {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 50px;
+        color: #EA2E25;
+      }
+      
+      .select-item button {
+        background: #333;
+        color: rgb(36, 36, 36);
+        width: 100%;
+        border: none;
+        text-align: left;
+        border-radius: 0;
+      }
+      
+      .select-item button:hover {
+        background: #07B8BE;
+      }
+
+    .photo-container1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .photo-container2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .photo-container3 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: -100px;
+      }
+      
+      .photo-container4 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .texty h2{
+        color:#07B8BE;
+        margin-left: 10px;
+        margin-bottom: 15px;
+        
+      }
+      
+      .para p {
+        margin-left: 10px;
+        margin-bottom: 5px;
+      }
+      
+      .photo-box {
+        margin: 12px;
+        margin-bottom: 50px;
+        border-radius: 10px;
+        width: 400px;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      .c1-btn{
+        width: 130px;
+        height: 40px;
+        background-color: #07B8BE;
+        margin-top: 20px;
+        border: none;
+      }
+      
+      .photo-box img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+      }
+      
+      .description {
+        padding: 10px;
+      }
+      
+      .link-button {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        background-color: #07B8BE ;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 10px auto;
+        width: 90%;
+      }
+      
+      .link-button:hover {
+        background-color: #EA2E25;
+      }
+
+    .rounded-pill1 {
+        width: 235px;
+        height: 50px;
+        border-radius: 20px;
+        margin-right: 3px;
+    }
+
+    .testimonial .nextprev-btn{
+        border: none;
+        background-color: #fff;
+    }
+    .prev:hover,.prev-btn:hover{
+        color:#000000;
+        transform: translateX(-10px);
+        transition-duration: 1s;
+    }
+    .next:hover,.next-btn:hover{
+        color:#000000;
+        transform: translateX(10px);
+        transition-duration: 1s;
+    }
+
+    /* blog section starts */
+    .blog{
+        background-color: #000000;
+    }
+    .blog .blogpost .card{
+        border: none;
+        border-radius: 5%;
+    }
+    .nav-bg{
+        background-color: #fff;
+    }
+
+    .blog .blogpost small{
+        color: #6f34fe;
+        font-size: 1.1rem;
+    }
+    .blog .blogpost h4,.blogpost a{
+        color: #3f396d;
+        font-weight: 700;
+        margin-top: 1rem;
+        text-decoration: none;
+    }
+    .blogpost a:hover{
+        color: #fca61f;
+    }
+    .blog .blogpost .read-more-btn{
+        text-decoration: none;
+        color: #fca61f;
+        font-size: 1.1rem;
+    }
+    .blog .blogpost .read-more-btn:hover{
+        color: #6f34fe;
+    }
+    /* styling modal group  */
+    .btn-c{
+        margin-left: 94%;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        margin-top: -3%;
+    }
+    .btn-c i{
+        color: #fca61f;
+    }
+    .modal-body .content span{
+        font-size: 1rem;
+    }
+    .modal-body .content small{
+        font-size: 1rem;
+        color: #6f34fe;
+    }
+
+    .slider {
+      height: 300px; /* Adjust as needed */
+      margin: auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden; /* Prevent content overflow */
+    }
+
+    .slide-track {
+      display: flex;
+      animation: scroll 20s linear infinite; /* Auto-scroll effect */
+    }
+
+    .slide {
+      height: 100%; /* Matches the slider height */
+      flex: 0 0 400px; /* Fixed width for each slide */
+      display: flex;
+      align-items: center; /* Center content vertically */
+      justify-content: center; /* Center content horizontally */
+      padding: 10px; /* Uniform spacing */
+    }
+
+    .slide img,
+    .slide video {
+      max-width: 100%; /* Ensure the media does not overflow */
+      max-height: 100%; /* Ensure the media does not overflow */
+      object-fit: contain; /* Maintain aspect ratio while fitting within the slide */
+      margin: 0; /* Remove default margins */
+    }
+
+    /* Auto-scroll animation */
+    @keyframes scroll {
+      0% {
+        transform: translateX(0); /* Start at the beginning */
+      }
+      100% {
+        transform: translateX(calc(-400px * 9)); /* Adjust based on the total number of slides */
+      }
+    }
+
+    /* Optional: gradient fade for better visual effect */
+    .slider::before,
+    .slider::after {
+      background: linear-gradient(to right, rgba(244, 94, 121, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 300px;
+      z-index: 2;
+    }
+
+    .slider::before {
+      left: 0;
+    }
+
+    .slider::after {
+      right: 0;
+    }
+
+
+      
+    /* contact section starts */
+    /* General Contact Section Styles */
+    .contact {
+        background-color: #f3f3f3;
+        padding: 2rem 0;
+    }
+
+/* Heading Styles */
+    .heading {
+        color: #000;
+        margin-bottom: 1rem;
+    }
+
+    .heading small {
+        display: block;
+        font-size: 1.2rem;
+        color: #EA2E25;
+        margin-bottom: 0.5rem;
+    }
+
+    .heading h3 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    /* Contact Information Text */
+    p {
+        color: #000000;
+        font-size: 1.1rem;
+        margin: 0.5rem 0;
+    }
+
+/* Contact Details Styles */
+    .contact-details {
+        color: #000000;
+        text-align: center;
+    }
+
+    .contact-item {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Icon Styles */
+    .contact-details i {
+        font-size: 2rem;
+        color: black;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Text Spacing and Colors */
+    .contact-details p {
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+        color: #555;
+    }
+
+    /* Emphasized Text Color */
+    .text-primary {
+        color: black;
+    }
+
+    /* Row Styles for Centering */
+    .row {
+        justify-content: center;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+
+    /* footer section starts */
+    footer{
+        background-color: #000000;
+    }
+
+    footer .link-group a{
+        margin-left: 10px;
+        margin-right: 10px;
+        text-decoration: none;
+        color: #6c757d;
+        font-size: 1.1rem;
+        margin-top: 1rem;
+    }
+    footer .link-group a:hover{
+        color: #EA2E25;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      font-size: 1.5rem;
+      background-color: black; /* LinkedIn color or other button color */
+      color: white;
+      text-decoration: none;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background-color: black; /* Darker LinkedIn color on hover */
+    }
+
+    @media (max-width: 768px) {
+      .social-links {
+        text-align: center;
+      }
+
+      .social-links a {
+        font-size: 1.25rem; /* Adjust size for smaller screens */
+        margin: 8px;
+      }
+    }
+
+
+    .card-container {
+      margin-top: 50px;
+      display: flex; /* Use Flexbox to arrange cards in a row */
+      justify-content: center; /* Center the cards horizontally */
+      gap: 20px; /* Space between cards */
+    }
+
+    .card1 {
+      width: 250px;
+      border-radius: 20px;
+      height: 300px;
+      perspective: 1000px;
+      background-color: rgb(36,36,36,0.5);
+      overflow: hidden;
+    }
+
+    .card2 {
+      width: 250px;
+      border-radius: 20px;
+      height: 300px;
+      perspective: 1000px;
+      background-color: rgb(36,36,36,0.5);
+      overflow: hidden;
+    }
+
+    .card3 {
+      width: 250px;
+      border-radius: 20px;
+      height: 300px;
+      background-color: rgb(36,36,36,0.5);
+      perspective: 1000px;
+      overflow: hidden;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .card1:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card2:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card3:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.974);
+      display: flex;
+      flex-direction: column; /* Aligns text on top and image below */
+      align-items: center;
+      justify-content: center; /* Aligns the content at the top */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .card-text {
+      margin-bottom: 25px; /* Space between text and image */
+      font-size: 18px;
+      text-align: center;
+      color: black;
+    }
+
+    .card-image {
+      margin-top: 90px;
+      width: 100%;
+      height: auto;
+      max-height: 200px; /* Limit the image height */
+      object-fit: cover; /* Ensures the image covers the available space */
+    }
+
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      color: var(--white-1);
+      backface-visibility: hidden;
+      background-color: rgba(255, 255, 255, 0.979); 
+      color: var(--white-1); 
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+    }
+
+    /* styling back to top button */
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+        display: none;
+        font-size: 1.4rem;
+        background-color: #EA2E25;
+        color: #fff;
+        animation: pulse 3s infinite;
+    }
+  </style>
+  <body>
+    <!-- navbar starts -->
+    <nav
+      id="navbar-top"
+      class="navbar navbar-expand-lg navbar-light sticky-top"
+      style="background-color: black"
+    >
+      <div class="container-fluid px-5">
+        
+        <button
+          class="nav-menu d-md-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="bi bi-menu-button-fill"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav gap-4" style="font-size: 1.1rem">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#service">Service</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonial">Photographs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">Other Activities</a>
+            </li>
+          </ul>
+        </div>
+        <!-- <button class="c-btn ms-4 py-2 px-4 rounded-pill d-none d-md-block"><a class="nav-link" href="#contact">Contact</a></button> -->
+      </div>
+    </nav>
+    <!-- navbar ends here -->
+
+    <!-- home section starts  -->
+    <section class="home pt-5 pb-5" id="home" style="background-image: url('images/bg2.webp');">
+
+      <div class="row justify-content-evenly align-middle">
+        <!-- here data-aos is used for adding aos animation  -->
+        <div class="col-10 col-md-6 text-center text-md-start">
+          <h2 style="color: white"> 
+            Hello! I Am <br /><span class="c-orange">Gurusha Walia</span>
+          </h2>
+          <div style="background-color: white; color: black; padding: 5px; border-radius: 10px; width: 580px;height: 60px;align-items: center;">
+            Passionate media enthusiast skilled in storytelling, leadership, and social media strategy, eager to drive impact in the dynamic media landscape.
+          </div>
+        
+        
+          <button class="c-btn h-btn rounded-pill" style="margin-top: 30px;">
+            Hire Me
+          </button>
+          <a href="" class="link ms-4 d-none">See My Work</a>
+        </div>
+        <div class="col-10 col-md-4 d-none d-md-block" style="margin-right: -30px; background-size: cover;margin-top: 50px;">
+          <img src="images/blue.png" class="img-fluid" alt="" style="border-radius: 50%; width: 350px; height: 350px;" />
+        </div>
+        
+      </div>
+    </section>
+    <!-- home section ends here -->
+
+    <!-- expertise section starts -->
+    <section class="expertise mt-5" id="service">
+      <div class="heading text-center" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+        <small>My Expertise</small>
+        <h3>
+          Provide Wide Range of <br />
+          Services
+        </h3>
+      </div>
+      <div class="row justify-content-evenly mt-5">
+        <div class="col-10 col-md-4">
+          <div class="service-card">
+            <div class="img">
+              <img
+                src="images/Untitled design (5).png"
+                class="img-fluid img1"
+                alt=""
+              />
+            </div>
+            <div class="content mt-3" >
+              <h4>Creative Content Development</h4>
+              <p class="text-muted" style="margin-top: 40px;">
+                Developing impactful and engaging content that resonates with diverse audiences across digital platforms.
+              </p>
+            
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-10" >
+          <div class="service-card">
+            <div class="img">
+              <img
+                src="images/Untitled design (6).png"
+                class="img-fluid img1"
+                alt=""
+              />
+            </div>
+            <div class="content mt-3">
+              <h4>Digital Engagement</h4>
+              <br>
+              <p class="text-muted">
+                Building and executing strategies that foster community engagement, increase brand awareness, and drive meaningful interactions.
+              </p>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-10" >
+          <div class="service-card">
+            <div class="img">
+              <img
+                src="images/Untitled design (4).png"
+                class="img-fluid img1"
+                alt=""
+              />
+            </div>
+            <div class="content mt-3">
+              <h4>Storytelling & Campaigns</h4>
+              <br>
+              <p class="text-muted">
+                Crafting compelling narratives and orchestrating multimedia campaigns to enhance brand presence and connect with audiences.
+              </p>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- expertise section ends here -->
+
+    <!-- skill section starts -->
+    <section class="skill mt-5 py-5" id="about">
+      <div class="row justify-content-evenly">
+        <div class="col-10 col-md-5 skill-with-images">
+          <div class="row justify-content-evenly">
+            <div class="col-10 col-md-6">
+              <div class="image-box ms-3 ms-md-0 text-center" style="background-color: white; padding: 20px; border-radius: 10px;">
+                <img src="images/Video_2024-11-19_at_7.46.11_PM-removebg-preview.png" alt="Videography" class="img-fluid rounded">
+                <br>
+                <p class="text1" style="color: black; margin-top: 50px;">Videography</p>
+              </div>
+            </div>
+            <div class="col-10 col-md-6 mt-4 mt-md-0">
+              <div class="image-box ms-3 ms-md-0 text-center" style="background-color: white; padding: 20px; border-radius: 10px;">
+                <img src="images/social-media-management.png" alt="Social Media Management" class="img-fluid rounded">
+                <br>
+                <p class="text1" style="color: black;">Social Media Management</p>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-evenly mt-4">
+            <div class="col-10 col-md-6">
+              <div class="image-box ms-3 ms-md-0 text-center" style="background-color: white; padding: 20px; border-radius: 10px;">
+                <img src="images/Simple_camera_vector_01_9ba62b5dc6-removebg-preview.png" alt="Photography" class="img-fluid rounded">
+                <br>
+                <p class="text1" style="color: black; margin-top: -15px;">Photography</p>
+              </div>
+            </div>
+            <div class="col-10 col-md-6 mt-4 mt-md-0">
+              <div class="image-box ms-3 ms-md-0 text-center" style="background-color: white; padding: 20px; border-radius: 10px;">
+                <img src="images/graphic-design-notepad-pencil-writing-vector-21945617-removebg-preview.png" alt="Writing" class="img-fluid rounded">
+                <br>
+                <p class="text1" style="color: black; margin-top: -32px;">Writing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-10 col-md-5 skill-detail" >
+          <div class="heading mt-5 mt-md-3">
+            <small>My Skills</small>
+            <h3>Powerful Narratives</h3>
+            <p style="color: white;">
+              Creating powerful digital experiences through Videography, Social Media Management, Photography, and Writing. Combining a passion for visual storytelling, strategic content creation, and impactful narratives, I deliver engaging, unique moments that resonate with audiences.
+            </p>
+            <p style="color: white;">
+              From capturing stunning visuals to crafting words that connect, my approach is both artistic and strategic, designed to elevate brand presence and foster meaningful connections across digital platforms.
+            </p>
+            <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill1">
+              <!-- here download attribute is used for adding download functionality to button  -->
+              <a
+                href="images/RESUME-G.pdf"
+                download="CV"
+                style="text-decoration: none;color: #fff;font-size: 15px;"
+                >Download CV</a
+              >
+            </button>
+            <button class="c-btn h-btn mt-3 py-3 px-5 rounded-pill1">
+              <!-- here download attribute is used for adding download functionality to button  -->
+              <a
+                href="images/guruvideo.mp4"
+                download="VideoCV"
+                style="text-decoration: none;color: #fff;font-size: 15px;"
+                >Download Video CV</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- skill section end here -->
+
+    <!-- portfolio section starts here -->
+    <article class="portfolio" data-page="portfolio" id="portfolio">
+
+      <header>
+        <h2 class="h2 article-title" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Portfolio</h2>
+      </header>
+
+      <section class="projects">
+        <ul class="filter-list">
+          <li class="filter-item">
+            <button class="active" data-filter="all" style="color: rgb(36, 36, 36);">All</button>
+          </li>
+          <li class="filter-item">
+            <button data-filter="documentary" style="color: rgb(36, 36, 36);">Documentary</button>
+          </li>
+          <li class="filter-item">
+            <button data-filter="reporting" style="color: rgb(36, 36, 36);">Reporting/News</button>
+          </li>
+          <li class="filter-item">
+            <button data-filter="vodcast" style="color: rgb(36, 36, 36);">Vodcast</button>
+          </li>
+          <!-- <li class="filter-item">
+            <button data-filter="content-designing" style="color: rgb(36, 36, 36);">Internship Work(Content Designing)</button>
+          </li> -->
+        </ul>
+      
+        <div class="filter-select-box">
+          <!-- <button class="filter-select" data-select style="color: rgb(36, 36, 36);">
+            <div class="select-value" data-select-value>Select category</div>
+            <div class="select-icon">
+              <ion-icon name="chevron-down"></ion-icon>
+            </div>
+          </button> -->
+      
+          <ul class="select-list">
+            <li class="select-item">
+              <button data-select-item="all" style="color: rgb(36, 36, 36);">All</button>
+            </li>
+            <li class="select-item">
+              <button data-select-item="documentary" style="color: rgb(36, 36, 36);">Documentary</button>
+            </li>
+            <li class="select-item">
+              <button data-select-item="reporting" style="color: rgb(36, 36, 36);">Reporting/News</button>
+            </li>
+            <li class="select-item">
+              <button data-select-item="vodcast" style="color: rgb(36, 36, 36);">Vodcast</button>
+            </li>
+            <!-- <li class="select-item">
+              <button data-select-item="content-designing" style="color: rgb(36, 36, 36);">Internship Work(Content Designing)</button>
+            </li> -->
+          </ul>
+        </div>
+      <div class="photo-container1">
+        <div class="photo-box documentary">
+          <img src="images/Screenshot 2024-10-24 204553.png" alt="Photo 1" width="320" height="240">
+          <div class="description">
+            <p>Contributed as a videographer and gave a voiceover to a group assignment for a college documentary project called ‘Nazariye.’</p>
+          </div>
+          <a href="https://bennettu-my.sharepoint.com/:v:/g/personal/meera_shirodkar_bennett_edu_in/EYTXIanuuA5EmLl3zsOwqgsB-JeUv62tuS08p5pMIClepA?e=2EAHvg" class="link-button" target="_blank" style="color: white;">View Work</a>
+        </div>
+    
+        <div class="photo-box documentary">
+          <img src="images/Screenshot 2024-10-24 214819.png" alt="Photo 2" width="320" height="210">
+          <div class="description">
+            <p>Contributed as a videographer and provided the voiceover for a college documentary assignment titled Zero Hunger, which focuses on h India's Sustainable Development Goal</p>
+          </div>
+          <a href="https://bennettu-my.sharepoint.com/:v:/g/personal/t22mceu0101_bennett_edu_in/EZgebpep_LNFl-0OpcbTn5gBd_uRh202d1OVO-8alZ2hxA?e=paSML3" class="link-button" target="_blank" style="color: white;">View Work</a>
+        </div>
+      </div>
+    
+      <div class="photo-container2">
+        <div class="photo-box reporting">
+          <img src="images/Screenshot 2024-11-05 172637.png" alt="Reporting Photo" width="320" height="240">
+          <div class="description">
+            <p>Worked as a PTC reporter, I contributed to a university news package covering the renowned Agra Art Gallery, a handicraft shop known for showcasing Agra's rich artisanal heritage.</p>
+          </div>
+          <a href="https://bennettu-my.sharepoint.com/:v:/g/personal/t22mceu0101_bennett_edu_in/EWnxAJwCCRtAlMHfw_melBQB0EFNu0MvRxiGMAXviG3Gzw?e=1eBdQv" class="link-button" target="_blank" style="color: white;">View Work</a>
+        </div>
+    
+        <div class="photo-box reporting">
+          <img src="images/Screenshot 2024-11-05 172750.png" alt="Reporting Photo" width="320" height="240">
+          <div class="description">
+            <p>Worked as a PTC reporter, I contributed to a university news package that explored how Tajikistan showcased its culture and heritage through its stall at the renowned Surajkund Mela in India.</p>
+          </div>
+          <a href="https://bennettu-my.sharepoint.com/:v:/g/personal/t22mceu0101_bennett_edu_in/ERW7Q4l6-fVJj--KiZxcAIEBHp-1k3FXO3wKeKtzVUC4CQ?e=ZrDsrd" class="link-button" target="_blank" style="color: white;">View Work</a>
+        </div>
+
+        <div class="photo-box reporting">
+          <img src="images/Screenshot 2024-11-19 203223.png" alt="Reporting Photo" width="320" height="240">
+          <div class="description">
+            <p>I interviewed an international award winning journalist and passionate film-maker for a university project, regarding the topic, ‘the scope of investigative and crime industry in India'</p>
+          </div>
+          <a href="https://bennettu-my.sharepoint.com/:v:/g/personal/t22mceu0105_bennett_edu_in/EZmF_nRdGw9Boeht7NP-5YsB9bZQJL2tMG_weqQAGwVqEw?e=cMZnQC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" class="link-button" target="_blank" style="color: white;">View Work</a>
+        </div>
+
+        <div class="photo-box reporting">
+          <img src="images/Screenshot 2024-11-19 203307.png" alt="Reporting Photo" width="320" height="240">
+          <div class="description">
+            <p>Worked as a news anchor and PTC reporter, I contributed to a university news package covering the social issue, ‘Zero Hunger’</p>
+          </div>
+          <a href="https://bennettu-my.sharepoint.com/:v:/g/personal/t22mceu0101_bennett_edu_in/ETK0dVUSBr9En0JaplHDq1EBO1aikOmcjfQBHfdWWvNFlQ?e=Mlj2ym&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" class="link-button" target="_blank" style="color: white;">View Work</a>
+        </div>
+
+      </div>
+    
+      <div class="photo-container3">
+        <div class="photo-box vodcast">
+          <img src="images/Screenshot 2024-10-24 220107.png" alt="Vodcast Photo" width="320" height="240">
+          <div class="description">
+            <p>Starred in as well contributed as a scriptwriter in a college vodcast project, delivering an engaging review of the movie ‘OMG 2’.</p>
+          </div>
+          <a href="https://bennettu-my.sharepoint.com/:v:/g/personal/t22mceu0101_bennett_edu_in/EVDTqNDkEolIvC9xM0VllLMBNL1Z6vmPHxeialEAP1vhaw?e=2P3bmA" class="link-button" target="_blank" style="color: white;">View Work</a>
+        </div>
+    
+        <div class="photo-box vodcast">
+          <img src="images/Screenshot 2024-10-24 220309.png" alt="Vodcast Photo" width="320" height="240">
+          <div class="description">
+            <p>Starred in as well contributed as a scriptwriter in a college vodcast project, delivering an engaging review of the movie ‘Adipurush’.</p>
+          </div>
+          <a href="https://bennettu-my.sharepoint.com/:v:/g/personal/t22mceu0101_bennett_edu_in/EWBfc5vDII5GlupbuIkSD9cBdci8hz_zFpielY4COWmJiQ?e=w0xgmi" class="link-button" target="_blank" style="color: white;">View Work</a>
+        </div>
+      </div>
+
+    </section>
+  </article>
+    <!-- portfolio section ends here -->
+
+
+    <!-- testimonial section starts  -->
+    <section class="testimonial mt-5 pt-5" id="testimonial">
+      <div class="row justify-content-evenly">
+        <!-- <div class="col-md-4 col-10" data-aos="slide-right"> -->
+          <!-- <img src="images/tastimonials-img.png" class="img-fluid" alt="" /> -->
+        </div>
+        <!-- <div class="col-md-6 col-10 mt-5" data-aos="slide-left"> -->
+          <div class="heading">
+            <!-- here we will use carousel element from bootstrap -->
+            <!-- <div
+              id="carouselExampleControls"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            > -->
+            <div class="tex" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;text-align: center;"><h3>My Photography Skills</h3></div>
+            <div class="slider">
+              <div class="slide-track">
+                <div class="slide">
+                  <img src="images/im1.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="images/im3.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="images/im2.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="images/im4.jpg" alt="">
+                </div>
+
+                <div class="slide">
+                  <img src="images/im6.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="images/im7.jpg" alt="">
+                </div>
+    
+                <div class="slide">
+                  <img src="images/im8.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="images/im9.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="images/im10.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="images/im11.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="images/im12.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="images/im13.jpg" alt="">
+                </div>
+                <div class="slide">
+                  <img src="images/im14.jpg" alt="">
+                </div>
+
+              </div>
+            </div>
+              <!-- <button
+                class="nextprev-btn rounded-pill prev-btn"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev"
+              >
+                <i class="bi bi-arrow-left-circle-fill prev"></i>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="nextprev-btn rounded-pill next-btn"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="next"
+              >
+                <i class="bi bi-arrow-right-circle-fill next"></i>
+                <span class="visually-hidden">Next</span>
+              </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- testimonial ends here -->
+
+    <!-- blog section starts -->
+    <section class="blog mt-5 pb-5" id="blog">
+      <div class="heading text-center pt-5">
+        <small>The things other than academics</small>
+        <h3>Other Activities</h3>
+        
+      </div>
+      <!-- <div class="container1">
+        <div class="card1">
+            <div class="content1">
+                <h3>Food Vlogger</h3>
+                <p>Additionally skilled in food vlogging, capturing engaging taste tests and reviews on camera.</p>
+            </div>
+        </div>
+        <div class="card2">
+            <div class="content1">
+                <h3>Model United Nations(MUN) Conferences
+                  </h3>
+                <p>Participated in six conferences, serving as a delegate in two and as a conference leader in four</p>
+            </div>
+        </div>
+
+        <div class="card3">
+            <div class="content1">
+                <h3>Networking & Outreach</h3>
+                <p>Skilled in networking and outreach, fostering meaningful connections and collaborations within diverse communities.</p>
+            </div>
+        </div>
+      </div> -->
+
+      <div class="card-container">
+        <div class="card1">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-text">Food Vlogger</div>
+              <img src="images/food-removebg-preview.png" alt="Cybersecurity Logo" style="width: 80%; height: auto;">
+            </div>
+            <div class="card-back">
+              <p>Additionally skilled in food vlogging, capturing engaging taste tests and reviews on camera.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card2">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-text">Model United Nations(MUN) Conferences</div>
+              <img src="images/MUN-removebg-preview.png" alt="Cybersecurity Logo" style="width: 80%; height: auto;">
+            </div>
+            <div class="card-back">
+              <p>Participated in six conferences, serving as a delegate in two and as a conference leader in four</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card3">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-text">Networking & Outreach</div>
+              <img src="images/network-removebg-preview.png" alt="Data Analysis Logo" style="width: 80%; height: auto;">
+            </div>
+            <div class="card-back">
+              <ul>
+                <p>Skilled in networking and outreach, fostering meaningful connections and collaborations within diverse communities. 
+                </p>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+        <!-- here we will make modals if Read more link is clicked the modal will popup -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              
+                <button type="button" class="btn-c rounded-pill" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
+              
+              <div class="modal-body px-4">
+                <div class="img">
+                  <img src="images/2048game.png" class="img-fluid" alt="">
+                </div>
+                <div class="content mt-3">
+                  <small>By Pawan Kumavat</small
+                    ><span class="text-muted ms-2">Mar 8,2022</span>
+                  <h4 class="card-title mt-3">Quis autem vea eum iure reprehenderit</h4>
+                  <div class="social-links mt-4">
+                      <button href="" class="rounded-pill dribble">
+                        <i class="bi bi-dribbble"></i>
+                      </button>
+                      <button href="" class="rounded-pill whatsapp">
+                        <i class="bi bi-whatsapp"></i>
+                      </button>
+                      <button href="" class="rounded-pill behance">
+                        <i class="bi bi-behance"></i>
+                      </button>
+                  </div>
+                  <p class="text-muted mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor eros a tellus auctor, nec suscipit nunc dignissim. Ut suscipit gravida augue sed elementum. Sed sed luctus nisl. Donec scelerisque nisi in sodales mattis. Vestibulum suscipit odio ac enim blandit sollicitudin. Aliquam ultrices sem quis urna placerat interdum. Etiam rutrum, quam sagittis tristique mollis, libero arcu scelerisque erat, eget tincidunt eros diam quis nunc.</p>
+                </div>
+              </div>
+              <div class="heading px-2">
+                <h3 class="fs-3 ms-3">Leave A Comment</h3>
+              </div>
+              <div class="contact-form ms-3 mt-3 pb-4 px-2">
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="E-mail"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Mobile No."
+                  />
+                </div>
+                <div class="mb-3">
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    placeholder="Message"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <button class="c-btn h-btn mt-3 py-2 px-4 rounded-pill">
+                  Submit
+                </button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              
+                <button type="button" class="btn-c rounded-pill" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
+              
+              <div class="modal-body px-4">
+                <div class="img">
+                  <img src="images/currency-converter.png" class="img-fluid" alt="">
+                </div>
+                <div class="content mt-3">
+                  <small>By Pawan Kumavat</small
+                    ><span class="text-muted ms-2 ms-md-0">Mar 8,2022</span>
+                  <h4 class="card-title mt-3">Quis autem vea eum iure reprehenderit</h4>
+                  <div class="social-links mt-4">
+                      <button href="" class="rounded-pill dribble">
+                        <i class="bi bi-dribbble"></i>
+                      </button>
+                      <button href="" class="rounded-pill whatsapp">
+                        <i class="bi bi-whatsapp"></i>
+                      </button>
+                      <button href="" class="rounded-pill behance">
+                        <i class="bi bi-behance"></i>
+                      </button>
+                  </div>
+                  <p class="text-muted mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor eros a tellus auctor, nec suscipit nunc dignissim. Ut suscipit gravida augue sed elementum. Sed sed luctus nisl. Donec scelerisque nisi in sodales mattis. Vestibulum suscipit odio ac enim blandit sollicitudin. Aliquam ultrices sem quis urna placerat interdum. Etiam rutrum, quam sagittis tristique mollis, libero arcu scelerisque erat, eget tincidunt eros diam quis nunc.</p>
+                </div>
+              </div>
+              <div class="heading px-2">
+                <h3 class="fs-3 ms-3">Leave A Comment</h3>
+              </div>
+              <div class="contact-form ms-3 mt-3 pb-4 px-2">
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="E-mail"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Mobile No."
+                  />
+                </div>
+                <div class="mb-3">
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    placeholder="Message"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <button class="c-btn h-btn mt-3 py-2 px-4 rounded-pill">
+                  Submit
+                </button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              
+                <button type="button" class="btn-c rounded-pill" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i></button>
+              
+              <div class="modal-body px-4">
+                <div class="img">
+                  <img src="images/dictionary.png" class="img-fluid" alt="">
+                </div>
+                <div class="content mt-3">
+                  <small>By Pawan Kumavat</small
+                    ><span class="text-muted ms-2 ms-md-0">Mar 8,2022</span>
+                  <h4 class="card-title mt-3">Quis autem vea eum iure reprehenderit</h4>
+                  <div class="social-links mt-4">
+                      <button href="" class="rounded-pill dribble">
+                        <i class="bi bi-dribbble"></i>
+                      </button>
+                      <button href="" class="rounded-pill whatsapp">
+                        <i class="bi bi-whatsapp"></i>
+                      </button>
+                      <button href="" class="rounded-pill behance">
+                        <i class="bi bi-behance"></i>
+                      </button>
+                  </div>
+                  <p class="text-muted mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor eros a tellus auctor, nec suscipit nunc dignissim. Ut suscipit gravida augue sed elementum. Sed sed luctus nisl. Donec scelerisque nisi in sodales mattis. Vestibulum suscipit odio ac enim blandit sollicitudin. Aliquam ultrices sem quis urna placerat interdum. Etiam rutrum, quam sagittis tristique mollis, libero arcu scelerisque erat, eget tincidunt eros diam quis nunc.</p>
+                </div>
+              </div>
+              <div class="heading px-2">
+                <h3 class="fs-3 ms-3">Leave A Comment</h3>
+              </div>
+              <div class="contact-form ms-3 mt-3 pb-4 px-2">
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="E-mail"
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Mobile No."
+                  />
+                </div>
+                <div class="mb-3">
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    placeholder="Message"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <button class="c-btn h-btn mt-3 py-2 px-4 rounded-pill">
+                  Submit
+                </button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- blog section ends here -->
+
+    <!-- contact section starts -->
+    <section class="contact py-5" id="contact">
+      <div class="heading text-center mb-4">
+        <small>Get in Touch</small>
+        <h3>Any Questions? Feel Free to Contact</h3>
+      </div>
+      <p class="text-center mb-5">
+        Feel free to reach out through the contact information provided below. I'd love to hear from you!
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 contact-details text-center">
+          <div class="contact-item mb-4">
+            <i class="bi bi-geo-alt-fill text-primary"></i>
+            <p class="mt-2">Bennett University, Greater Noida</p>
+          </div>
+          <div class="contact-item mb-4">
+            <i class="bi bi-telephone-fill text-primary"></i>
+            <p class="mt-2">+91 8449005801</p>
+          </div>
+          <div class="contact-item mb-4">
+            <i class="bi bi-envelope-fill text-primary"></i>
+            <p class="mt-2">waliagurusha@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- contact section ends here -->
+
+      <!-- now we will make back to top button when user click on it it will be redirected to top page  -->
+    <button
+      type="button"
+      class="btn btn-floating btn-lg rounded-pill"
+      id="btn-back-to-top"
+    >
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- footer section starts  -->
+    <footer class="text-center text-muted py-4">
+      <div class="link-group mt-5" >
+        <a href="#home">Home</a>
+        <div class="vr"></div>
+        <a href="#about">About</a>
+        <div class="vr"></div>
+        <a href="#service">Service</a>
+        <div class="vr"></div>
+        <a href="#portfolio">Portfolio</a>
+        <div class="vr"></div>
+        <a href="#blog">Other Activities</a>
+        <div class="vr"></div>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-links mt-5">
+        <a href="https://www.linkedin.com/in/gurusha-walia-49b2ab301?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B736BcevXSxWJTgfVuItm0w%3D%3D" class="rounded-pill linkedin" target="_blank">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://wa.me/your-number" class="rounded-pill whatsapp" target="_blank">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="mailto:waliagurusha@gmail.com" class="rounded-pill mail" target="_blank">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+      
+      <hr class="text-muted my-4" />
+
+      <p>Copyright 2022 Gurusha Walia | All Rights Reserved.</p>
+    </footer>
+    <!-- footer section ends here -->
+
+      <!-- bootstrap javascript cdn link  -->
+    
+    <!-- custom js file linking -->
+    <script src="js/script.js"></script>
+    
+  </body>
+</html>
